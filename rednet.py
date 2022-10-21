@@ -50,12 +50,12 @@ class REDNet(nn.Module):
         self.num_layers = num_layers
 
         # Encoders
-        self.input_layer = nn.Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding='same').to(device)
-        self.encoders = [nn.Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding='same').to(device) for _ in range(self.num_layers - 1)]
+        self.input_layer = nn.Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding='same')
+        self.encoders = [nn.Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding='same') for _ in range(self.num_layers - 1)]
     
         # Decoders
-        self.decoders = [nn.Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding='same').to(device) for _ in range(self.num_layers - 1)]
-        self.output_layer = nn.Conv2d(64, 3, kernel_size=(3, 3), stride=(1, 1), padding='same').to(device)
+        self.decoders = [nn.Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding='same') for _ in range(self.num_layers - 1)]
+        self.output_layer = nn.Conv2d(64, 3, kernel_size=(3, 3), stride=(1, 1), padding='same')
 
         # Residual
         self.residual = []
