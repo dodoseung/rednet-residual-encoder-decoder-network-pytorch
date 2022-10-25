@@ -8,10 +8,6 @@ from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 import numpy as np
 
-import os
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]= "0,1,2"
-
 # Data parameters
 hr_size = (50, 50)
 lr_size = (25, 25)
